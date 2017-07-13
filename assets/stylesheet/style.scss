@@ -35,14 +35,19 @@ body {
     font-size: 30px;
     padding: 15px 0;
     text-align: center;
+    display: inline-block;
     color: $headlineTextColor;
     text-transform: uppercase;
+    letter-spacing: 4.2px;
     display: inline-block;
     margin: 0 auto;
-    letter-spacing: 2.5px;
 }
+
 .headline-marker {
     position: relative;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-weight: 500;
 
     &:before {
         content: "";

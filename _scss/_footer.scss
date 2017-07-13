@@ -1,1 +1,63 @@
- 
+.footer-wrapper {
+    background-color: $primaryTextColor;
+}
+
+
+.footer {
+    padding: 30px 0;
+    color: $thirdTextColor;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    &__logo {
+        width: 166px;
+        height: 22px;
+        background-image: url(../img/logo.png);
+        background-position: 0 -50px;
+        background-size: 100%;        
+    }
+
+    &__copyrating {
+        display: block;
+        font-size: 16px;
+        margin-top: 15px;    
+    }
+
+    &__shared-item {
+        display: inline-block;
+        margin-right: 30px;
+        &:last-child {
+            margin-right: 0;
+        }
+
+    }
+
+    &__shared-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.1);
+        background-size: cover;
+        background-position: center;
+    }
+
+    .twitter-icon {
+        background-image: url(../img/twitter-icon.png);
+    }
+    .facebook-icon {
+        background-image: url(../img/facebook-icon.png);
+    }
+    .in-icon {
+        background-image: url(../img/in-icon.png);
+    }
+    .insta-icon {
+        background-image: url(../img/insta-icon.png);
+    }
+    .pint-icon {
+        background-image: url(../img/pint-icon.png);
+    }
+}
+

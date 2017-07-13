@@ -1,0 +1,112 @@
+.services-wrapper {
+    background: #e1e8ed;
+}
+.services {
+    padding: 110px 0 120px;
+    text-align: center;
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-top: 50px;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: 31%;
+        // padding: 40px;
+        // justify-content: space-between;
+        // margin-top: 50px;
+    
+        div:first-child {
+            margin-bottom: 40px;
+        }
+
+    }
+
+
+    &__item-image  {
+        flex: 59 0 0.67%;
+        min-height: 295px;
+        background-size: cover;
+        background-position: center;    
+    }
+
+    &__item-content  {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 465px;
+        box-sizing: border-box;
+        padding: 45px;
+        background-color: #f7f7f7;
+        color: $thirdTextColor;
+        background-size: cover;
+        background-position: center;  
+
+        &.dark-scheme {
+            color: $primaryTextColor;
+            
+        }
+    }
+
+
+    &__item-headline {
+        font-size: 30px;
+        letter-spacing: 3px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+    }
+
+    &__item-description {
+        li {
+            margin-left: 20px;
+            font-size: 18px;
+            list-style-type: disc;
+            text-align: left;
+            line-height: 32px;
+            list-style-position: outside;
+        }
+    }
+
+    
+    .one-item-grid {
+        .services__item-content {
+            flex: 129 0 0.67%;
+        }
+    }
+    .two-item-grid {
+        .services__item-content {
+            height: 50%;
+            min-height: 375px;
+        }
+
+
+    }
+}
+
+
+
+.consulting-image {
+    background-image: url(../img/consulting-image.png);    
+}
+
+.blockchain-image {
+    background-image: url(../img/blockchain-image.jpg);    
+}
+
+.blockchain-background {
+    background-image: url(../img/blockchain-background.jpg);    
+}
+
+
+.vr-ar-background {
+    background-image: url(../img/vr-ar-background.jpg);    
+}
+
+.game-background {
+    background-image: url(../img/game-background.jpg);    
+}
