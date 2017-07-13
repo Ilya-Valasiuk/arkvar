@@ -1,0 +1,57 @@
+---
+---
+
+@import "_reset";
+@import "_settings";
+@import "_header";
+@import "_info-block";
+@import "_services";
+@import "_strategy";
+@import "_experts";
+@import "_blog";
+@import "_clients";
+@import "_contact";
+@import "_footer";
+
+
+body {
+    width: 100%;
+    font-family: $mainFontFamily;
+}
+
+
+.main-section {
+    width: 1280px;
+    margin: 0 auto;
+    // padding-top: 100px 0;
+
+
+    // max-width: 1280px;
+}
+
+
+
+.headline {
+    font-size: 30px;
+    padding: 15px 0;
+    text-align: center;
+    color: $headlineTextColor;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 auto;
+    letter-spacing: 2.5px;
+}
+.headline-marker {
+    position: relative;
+
+    &:before {
+        content: "";
+        width: 70px;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        
+        background: $headlineTextColor;
+    }
+}

@@ -1,0 +1,65 @@
+sass:
+  sass_dir: _scss
+  style: compressed
+
+  
+# # other settings
+# title: play2live
+
+# defaults:
+#   - scope:
+#       path: "assets/img"
+#       values:
+#         image: true
+
+assets: assets
+
+streaming_platform:
+  eng: Streaming Platform
+  ru: Стриминговая платформа
+
+streaming_platform_text1:
+  eng: We develop new generation product – the first media space merging a streaming and the blockchain technologies. We’re working at the overlap of huge gaming and eSports markets ($100 bln and $1.2 bln in 2017 respectively) and revolutionary blockchain technology.
+  ru: Мы разрабатываем продукт нового поколения – первое медиапространство, объединяющее технологии стриминга и блокчейна. Мы работаем на пересечении огромного рынка гейминга и киберспорта ($100 млрд и $1,2 млрд за 2017 год соответственно) и революционной блокчейн-технологии.
+
+streaming_platform_text2:
+  eng: We require more professionals!
+  ru: Нужно больше профессионалов!
+
+streaming_platform_text3:
+  eng: We invite high profile developers and IT specialists to project that will change landscape of the world of top technology and eSports – applying blockchain technology in completely new spheres.
+  ru: Мы приглашаем высококлассных разработчиков и IT-специалистов в проект, который изменит ландшафт мира высоких технологий и киберспорта – применяя технологию блокчейн в новых, не используемых до этого, сферах. 
+
+streaming_platform_button:
+  eng: All vacancies
+  ru: Выбрать вакансию
+
+our_team:
+  eng: Our team
+  ru: Команда
+
+our_team_text:
+  eng: Play2Live is a major project, which is being developed by one of the leaders of European IT market. We’ve raised funds, launched the development – all we need is ambitious and efficient specialists.
+  ru: Play2Live – это ключевой проект одного из лидеров европейского IT-рынка, который уже реализуется. Мы привлекли инвестиции и запустили разработку – нужны только амбициозные и работоспособные специалисты.
+
+join_team:
+  eng: Join the team
+  ru: Присоединиться к команде
+
+join_team_text:
+  eng: We provide our employees with ultimate operation comfort and work conditions – decent wage, social package, and other advantages. And all that in cozy offices from New York City to Moscow and Minsk.
+  ru: Мы предоставляем нашим сотрудникам максимально комфортные условия – достойная оплата, социальный пакет и другие преимущества. И всё это в уютных офисах – от Нью-Йорка до Москвы и Минска.
+
+join_team_text1:
+  eng: Choose position according to your taste and skills and join our team – future is ours.
+  ru: Выбирайте позицию по вкусу и скиллам, и присоединяйтесь к нашей команде – за нами будущее.
+
+all_locations:
+  eng: All locations
+  ru: Все локации
+
+all_categories:
+  eng: All Categories
+  ru: Все категории
+
+closeicon: <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26"><path fill="#6CC5A5" fill-rule="evenodd" d="M26.001 24.564l-1.246 1.437L13 14.337 1.245 26.001l-1.246-1.437L11.652 13-.001 1.436 1.245-.001 13 11.663 24.755-.001l1.246 1.437L14.347 13l11.654 11.564z"/></svg>

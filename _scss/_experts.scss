@@ -1,0 +1,66 @@
+.experts {
+    position: relative;
+    padding-top: 100px;
+
+    &-main-bg {
+        background-image: url(../img/img-leadership.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        padding-top: 250px;
+        padding-bottom: 80px;
+    }
+
+    &-second-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #246983;
+        margin-top: 250px;
+        opacity: 0.8;
+        -webkit-filter: blur(2px);
+        -moz-filter: blur(2px);
+        -o-filter: blur(2px);
+        -ms-filter: blur(2px);
+        filter: blur(2px);
+    }
+
+    &-content {
+        display: flex;
+        align-items: center;
+    }
+
+    &__description-wrapper {
+        flex: 1;
+        margin-left: 100px;
+    }
+
+    &__headline {
+        color: #fff !important;
+
+        &:before {
+            background-color: #fff !important;
+        }
+    }
+
+    &-name {
+        color: #fff;
+        font-size: 30px;
+        line-height: 24px;
+        padding: 60px 0 30px;
+    }
+
+    &-text {
+        margin-bottom: 30px;
+        font-size: 18px;
+        line-height: 28px;
+        color: #fff;
+
+        &::last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+}
