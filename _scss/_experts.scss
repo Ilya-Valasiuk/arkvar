@@ -39,6 +39,7 @@
 
     &__headline {
         color: #fff !important;
+        margin-bottom: 60px !important;
 
         &:before {
             background-color: #fff !important;
@@ -49,7 +50,11 @@
         color: #fff;
         font-size: 30px;
         line-height: 24px;
-        padding: 60px 0 30px;
+        margin-bottom: 30px;
+
+        .experts-grid & {
+            color: #333;
+        }
     }
 
     &-text {
@@ -57,9 +62,53 @@
         font-size: 18px;
         line-height: 28px;
         color: #fff;
+        font-weight: 100;
+
+        .experts-grid & {
+            color: #333;
+        }
 
         &::last-child {
             margin-bottom: 0;
+        }
+    }
+
+    &-grid {
+        padding: 92px 0;
+
+        &__headline-wrapper {
+            margin-bottom: 45px;
+        }
+
+        &-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+
+            &::last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        &-col {
+            display: flex;
+            flex-direction: row;
+            width: 48%;
+
+            &-img {
+                width: 110px;
+                height: 110px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            &-content {
+                flex: 1;
+                margin-left: 40px;
+            }
         }
     }
     

@@ -17,16 +17,17 @@ body {
     width: 100%;
     font-family: $mainFontFamily;
 
-    @media only screen and (max-width: 1023px) {
-        width: 1280px;
-    }
+    // @media only screen and (min-width: 1024px) {
+    //     width: 1280px;
+    // }
 }
 
 
 
 
 .main-section {
-    width: 1280px;
+    width: 100%;
+    // width: 1280px;
     margin: 0 auto;
     // padding-top: 100px 0;
 
@@ -37,7 +38,7 @@ body {
         width: 90%;
     }
 
-    @media only screen and (max-width: 1023px) {
+    @media only screen and (min-width: 1280px) {
         width: 1280px;
     }
 }
@@ -60,12 +61,12 @@ body {
     position: relative;
     padding: 15px 0;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 300;
 
     &:before {
         content: "";
         width: 70px;
-        height: 2px;
+        height: 3px;
         position: absolute;
         left: 0;
         bottom: 0;
