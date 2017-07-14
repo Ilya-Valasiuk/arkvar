@@ -9,18 +9,17 @@
 
 .header {   
     &__headline {
-        margin: 80px 0 0 60px; 
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 1.2px;
-        font-weight: 300;
+        margin: 125px 0 0 125px;
+        font-size: 14px;
+        letter-spacing: 2.5px;
+        padding: 15px 0;
+        line-height: 150%;
         color: $secondaryTextColor;
         text-transform: uppercase;
     }
     &__subheadline {
-        margin: 45px 0 0 60px;
-        font-size: 24px;
-        line-height: 32px;
+        margin: 25px 0 0 125px;
+        font-size: 54px;
         color: $headlineTextColor;
     }
 }
@@ -35,10 +34,18 @@
 .site-nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 
-
+    &__menu {
+        display: none;
+        width: 33px;
+        height: 25px;
+        margin-right: 30px;
+        background-image: url(../img/menu.png);
+        background-position: center;
+        background-size: cover;
+    }
     &__logo {
         width: 166px;
         height: 22px;
@@ -48,7 +55,7 @@
         cursor: pointer;
     }
     &__list {
-        display: none;
+        display: block;
         font-size: 0;
     }
 
@@ -75,27 +82,60 @@
     }
 }
 
-@media only screen and (min-width: 1024px) {
 
-    .site-nav {
-        justify-content: space-between;
 
-        &-list {
-            display: block;
-        }
+@media only screen and (max-width: $large) {
+
+    .header__headline {
+        margin: 60px 60px 0;
+    }
+    .header__subheadline {
+        margin: 45px 60px 0;
+        font-size: 34px;
+        line-height: 125%;
     }
 
+}
+
+
+@media only screen and (max-width: $medium2x) {
+
     .header {
-        &__headline {
-            margin: 125px 0 0 125px; 
-            font-size: 14px;
-            letter-spacing: 2.5px;
-            padding: 15px 0;
-            line-height: 150%;
+        padding: 25px 0 45px;
+    }
+    .site-nav {
+        justify-content: flex-start;
+
+        &__menu {
+            display: block;
         }
-        &__subheadline {
-            margin: 25px 0 0 125px;
-            font-size: 54px;    
+
+        &__list {
+            display: none;
         }
+    }
+}
+
+
+
+
+@media only screen and (max-width: $medium) {
+
+    .site-nav__logo {
+        width: 139px;
+        height: 19px;
+    }
+
+    .header__headline {
+        margin: 60px 40px 0;
+        font-size: 14px;
+        line-height: 125%;
+        letter-spacing: 1.2px;
+        padding: 10px 0;
+    }
+    .header__subheadline {
+        margin: 45px 40px 0;
+        font-size: 26px;
+        line-height: 125%;
     }
 }
