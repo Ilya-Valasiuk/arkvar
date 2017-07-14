@@ -6,7 +6,6 @@
 @import "_header";
 @import "_info-block";
 @import "_services";
-@import "_strategy";
 @import "_experts";
 @import "_blog";
 @import "_clients";
@@ -17,7 +16,13 @@
 body {
     width: 100%;
     font-family: $mainFontFamily;
+
+    @media only screen and (max-width: 1023px) {
+        width: 1280px;
+    }
 }
+
+
 
 
 .main-section {
@@ -27,6 +32,14 @@ body {
 
 
     // max-width: 1280px;
+
+    @media only screen and (max-width: $large3x) {
+        width: 90%;
+    }
+
+    @media only screen and (max-width: 1023px) {
+        width: 1280px;
+    }
 }
 
 
