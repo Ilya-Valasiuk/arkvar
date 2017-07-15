@@ -72,7 +72,7 @@ $('.nav-trigger').on('click touch', function(event) {
         if (isSmall) {
             navMobileItems.find('.mobile-nav__link--current').removeClass('mobile-nav__link--current');
             var currentItem = navMobileItems.find('[data-block="' + window.location.hash.split('#')[1] + '"]');
-            currentItem.find('.mobile-nav__link').addClass('mobile-nav__link--current');
+            currentItem.addClass('mobile-nav__link--current');
         }
     }
 });
