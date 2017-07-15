@@ -39,6 +39,7 @@
             letter-spacing: 2px;
             outline: none;
         }
+
         .input-hint {
             display: block;
             position: absolute;
@@ -49,7 +50,14 @@
             font-size: 14px;
             letter-spacing: 2px;
             font-weight: 300;
+            transition: all 0.4s ease;
+
+            &--small {
+                font-size: 12px;
+                bottom: 45px;
+            }
         }
+
     }
 
     &-submit {
@@ -78,9 +86,14 @@
         &-input {
 
             input {
+                padding: 15px 0;
                 font-size: 12px;
                 letter-spacing: 1.4px;
             }
+        }
+        .input-hint--small {
+            font-size: 10px;
+            bottom: 40px;
         }
 
     }

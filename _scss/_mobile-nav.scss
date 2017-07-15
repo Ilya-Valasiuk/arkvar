@@ -10,6 +10,7 @@
     position: absolute;
     box-sizing: border-box;
     overflow-y: auto;
+    max-width: 320px;
     padding: 25px 30px 45px;
     top: 0;
     left: 0;
@@ -85,21 +86,6 @@
     }
 }
 
-
-
-
-/************************************************
- *      Styles fo width: 640px
- ************************************************/
-
-@media only screen and (min-width: $medium) {
-
-    .mobile-nav {
-        right: initial;
-        padding-right: 50px;
-        width: 350px;
-    }
-}
 
 
 

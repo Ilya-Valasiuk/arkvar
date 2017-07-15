@@ -101,6 +101,20 @@ $('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
 });
 
 
+$('.contact-form').on('focus', 'input', function(event) {
+    $( this ).siblings( ".input-hint" ).addClass('input-hint--small');
+});
+
+$('.contact-form').on('blur', 'input', function(event) {
+    if ( !this.value ) {
+        $( this ).siblings( ".input-hint" ).removeClass('input-hint--small');
+    }
+});
+$('.contact-form').on('click touch', '.input-hint', function(event) {
+    $( this ).siblings( "input" ).focus();
+});
+
+
 function initExpertsSlick() {
     slickExperts = $('.experts-grid-row').slick({
         prevArrow: '.experts-mobile-arrows .clients-carousel-prev',
