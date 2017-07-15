@@ -200,23 +200,3 @@ var scrollHandler = function () {
 };
 
 $(document).on('scroll', $.throttle(200, true, scrollHandler));
-
-$('.site-nav__list, .mobile-nav__list').on('click touch', '.site-nav__link, .mobile-nav__link', function (event) {
-    event.preventDefault();
-    var isMobileNav = $(window).width() < 1024;
-
-    if (isMobileNav) {
-        $('.mobile-nav').removeClass('mobile-nav--showed');
-        toggleModalWindowVisibility(this);
-    }
-    var scrollTo = $(this).data('block');
-    var offset = $('[data-scroll-block="' + scrollTo + '"]').offset().top;
-    
-    if (isMobileNav) {
-        $('body').scrollTop(scrollPosition ? scrollPosition : 0);
-    }
-    
-    $('body').animate({scrollTop: isMobileNav ? offset - 75 : offset}, function () {
-        window.location.hash = scrollTo;
-    });
-});
