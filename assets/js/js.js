@@ -11,6 +11,11 @@ var globalProp = {
 var allBlocks = $('[data-scroll-block]');
 var bodyEl = $('body');
 
+
+var isSmall = $(window).width() < 768;
+var slickExperts;
+var slickBlog;
+
 function toggleModalWindowVisibility(el) {
 
     if ( !$(el).hasClass('close-button') ) {
@@ -27,9 +32,16 @@ function toggleModalWindowVisibility(el) {
     }
 }
 
-var isSmall = $(window).width() < 768;
-var slickExperts;
-var slickBlog;
+
+$(window).on('scroll', function (event) {
+    if ($(window).width() <= '1020') {
+        if ($(window).scrollTop() <= 0) {
+            $('.site-nav').removeClass('site-nav--scrolled');
+        } else {
+            $('.site-nav').addClass('site-nav--scrolled');
+        }
+    }
+});
 
 $( window ).resize(function() {
     globalProp.windowHeight = $(window).height();
@@ -80,7 +92,7 @@ $('.nav-trigger').on('click touch', function(event) {
 
 $('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
     event.preventDefault();
-    $('.mobile-nav').removeClass('show-flex');
+    $('.mobile-nav').removeClass('mobile-nav--showed');
     toggleModalWindowVisibility(this);
 
     var blockName = $(this).data('block');

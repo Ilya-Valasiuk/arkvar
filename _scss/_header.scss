@@ -117,9 +117,13 @@
             width: 100%;
             position: absolute;
             background: rgba(255, 255, 255, 0.9);
-
         }
 
+        &--scrolled {
+            &:before {
+                box-shadow: 0 0 49px 0 rgba(0,0,0,0.21);
+            }
+        }
 
         &__menu {
             display: block;
