@@ -97,7 +97,7 @@ $('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
 
     var blockName = $(this).data('block');
     var scrollPosition = $('[data-scroll-block="' + blockName + '"]').offset().top;
-    $(window).scrollTop(scrollPosition - 75);
+    $(window).scrollTop(scrollPosition - 74);
 });
 
 
@@ -146,18 +146,29 @@ if (isSmall) {
 
 initClientsSlick();
 
-function checkVisible(elm) {
+function checkVisible(elm, threshold, mode) {
+  threshold = threshold || 0;
+  mode = mode || 'visible';
+
   var rect = elm.getBoundingClientRect();
   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  var above = rect.bottom - threshold < 0;
+  var below = rect.top - viewHeight + threshold >= 0;
+
+  return mode === 'above' ? above : (mode === 'below' ? below : !above && !below);
 }
+
 
 var scrollHandler = function () {
     if (bodyEl.hasClass('fixed')) return;
     var el = [].find.call(allBlocks, function(item) {
-        return checkVisible(item);
+        return checkVisible(item, isSmall ? 75 : 0);
     });
 
+    if (document.body.scrollTop < 100) {
+        window.location.hash = '';
+        return;
+    }
     window.location.hash = el ? $(el).attr('data-scroll-block') : '';
 };
 
