@@ -182,20 +182,20 @@ var scrollHandler = function () {
 
 $(document).on('scroll', $.throttle(200, true, scrollHandler));
 
-$('.site-nav__list, .mobile-nav__list').on('click touch', '.site-nav__link, .mobile-nav__link', function (event) {
+$('.site-nav__list .site-nav__link, .mobile-nav__list .mobile-nav__link, .mobile-nav__logo, .site-nav__logo').on('click touch', function (event) {
     event.preventDefault();
     var isMobileNav = $(window).width() < 1024;
 
     if (isMobileNav) {
-        $('.mobile-nav').removeClass('mobile-nav--showed');
-        toggleModalWindowVisibility(this);
+        if ($('.mobile-nav').hasClass('mobile-nav--showed')) {
+            $('.mobile-nav').removeClass('mobile-nav--showed');
+            toggleModalWindowVisibility(this);
+            $('body').scrollTop(scrollPosition ? scrollPosition : 0);
+        }
     }
     var scrollTo = $(this).data('block');
-    var offset = $('[data-scroll-block="' + scrollTo + '"]').offset().top;
-    
-    if (isMobileNav) {
-        $('body').scrollTop(scrollPosition ? scrollPosition : 0);
-    }
+    var element = $('[data-scroll-block="' + scrollTo + '"]');
+    var offset = element.length ? element.offset().top : 0;
     
     $('body').animate({scrollTop: isMobileNav ? offset - 75 : offset}, function () {
         window.location.hash = scrollTo;
