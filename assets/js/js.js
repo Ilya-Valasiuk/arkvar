@@ -14,7 +14,7 @@ function toggleModalWindowVisibility(el) {
         globalProp.currentPosition = $(window).scrollTop();
     }
 
-    $('.site-nav').toggleClass('hidden')
+    $('.site-nav').toggleClass('hidden');
     $('body').toggleClass('fixed');
     $('.main-wrapper').toggleClass('blured');
 
@@ -64,6 +64,17 @@ $('.nav-trigger').on('click touch', function(event) {
     if (!isVisible) {
         $('.mobile-nav').addClass('animated fadeInLeft');
     }
+});
+
+
+$('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
+    event.preventDefault();
+    $('.mobile-nav').toggleClass('show-flex');
+    toggleModalWindowVisibility(this);
+
+    var blockName = $(this).data('block');
+    var scrollPosition = $('.' + blockName + '-wrapper').offset().top;
+    $(window).scrollTop(scrollPosition - 75);
 });
 
 
