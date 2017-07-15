@@ -26,7 +26,7 @@ body {
 
 .fixed {
     height: 100%;
-    position: fixed;
+    overflow: hidden;
 }
 .blured {
     filter: blur(5px);
@@ -37,7 +37,20 @@ body {
 .show-flex {
     display: flex !important;
 }
+.main-container.blured {
 
+    &:before {
+        content: "";
+        position: absolute;
+        background: rgba(255,255,255,0.7);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 20000px;
+        z-index: 1;
+    }
+}
 
 .main-section {
     width: 100%;

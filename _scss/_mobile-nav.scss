@@ -7,7 +7,7 @@
 }
 
 .mobile-nav {
-    position: absolute;
+    position: fixed;
     box-sizing: border-box;
     overflow-y: auto;
     max-width: 320px;
@@ -46,10 +46,11 @@
     &__logo {
         height: 18px;
         width: 139px;
-        margin-top: 3px;
+        margin-top: 4px;
         background-image: url(../img/logo.png);
         background-position: 0 -42px;
         background-size: 100%;
+        cursor: pointer;
     }
 
     &__list {

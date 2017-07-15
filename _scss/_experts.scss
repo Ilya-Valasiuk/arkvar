@@ -140,6 +140,7 @@
 
 @media only screen and (max-width: $large - 1) {
 
+
     .experts-main-bg {
         padding-bottom: 30px;
         padding-top: 56vw;
@@ -178,6 +179,10 @@
     }
     .experts-grid-col-content {
         margin-left: 0;
+    }
+    .experts-grid.main-section {
+        padding-top: 60px;
+
     }
 
 
