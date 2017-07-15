@@ -4,6 +4,9 @@
 
     .section-wrapper {
         text-align: center;
+        @media only screen and (min-width: 1024px) {
+            text-align: left;
+        }
     }
     &-main-bg {
         background-image: url(../img/img-leadership.jpg);
@@ -47,6 +50,10 @@
 
         &:before {
             background-color: #fff !important;
+        }
+
+        @media only screen and (min-width: 1024px) {
+            margin-left: 302px !important;
         }
     }
 
