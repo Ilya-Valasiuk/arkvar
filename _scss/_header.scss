@@ -98,22 +98,47 @@
 }
 
 
-@media only screen and (max-width: $medium2x) {
+@media only screen and (max-width: 1020px) {
 
     .header {
         padding: 25px 0 45px;
     }
     .site-nav {
+        position: fixed;
         justify-content: flex-start;
+        width: 100%;
+        z-index: 1;
+
+
+        &:before {
+            content: "";
+            height: 75px;
+            margin-left: -7.5%;
+            width: 100%;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+
+        }
+
 
         &__menu {
             display: block;
+            z-index: 1;
+        }
+
+        &__logo {
+            z-index: 1;
         }
 
         &__list {
             display: none;
         }
     }
+
+
+
+
+
 }
 
 

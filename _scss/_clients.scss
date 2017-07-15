@@ -160,11 +160,27 @@
     justify-content: center;
     padding: 60px 0 ;
     background-color: #f7f7f7;
-    
 
     &-wrapper {
         background-image: url(../img/ref-logo.png);
         background-repeat: no-repeat;
         background-position: 50%;
     }
+}
+
+
+
+/************************************************
+ *      Styles fo width: 640px
+ ************************************************/
+
+@media only screen and (max-width: $small2x) {
+
+    .partners {
+        img {
+            width: 200px;
+            height: 100%;
+        }
+    }
+
 }
