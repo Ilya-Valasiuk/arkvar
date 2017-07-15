@@ -17,9 +17,9 @@ var slickExperts;
 var slickBlog;
 
 function toggleModalWindowVisibility(el) {
-
     $('.mobile-nav').toggleClass('mobile-nav--showed');
     $('body').toggleClass('fixed');
+    $('.overlay').toggleClass('show');
     $('.main-container').toggleClass('blured');
 }
 
@@ -60,7 +60,7 @@ $( window ).resize(function() {
 });
 
 
-$('body').on('click touch', '.blured',function(event) {
+$('.overlay').on('click touch', function(event) {
     toggleModalWindowVisibility();
 });
 

@@ -2,7 +2,7 @@
  *      Mobile NAV
  ************************************************/
 .mobile-nav--showed {
-    display: flex !important;
+    display: block !important;
     margin-left: 0 !important;
 }
 
@@ -10,21 +10,28 @@
     position: fixed;
     box-sizing: border-box;
     overflow-y: auto;
-    max-width: 320px;
+    max-width: 375px;
     padding: 25px 30px 45px;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    height: 100%;
     background: rgba(41, 121, 151, 0.9);
     margin-left: 0;
-    flex-direction: column;
-    justify-content: space-between;
     z-index: 10;
     display: none;
     animation-duration: 0.4s;
     color:$thirdTextColor;
 
+    &__wrapper {
+        min-height: 100%;
+        width: 100%;
+        min-width: 260px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     &__container {
         display: flex;
         flex-direction: row;
@@ -40,7 +47,6 @@
         background-image: url(../img/close-icon.png);
         background-size: cover;
         background-position: center;
-
     }
 
     &__logo {
@@ -70,6 +76,7 @@
     }
 
     &__sharing {
+        margin-top: 30px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -88,6 +95,13 @@
 }
 
 
+
+@media only screen and (max-width: $small2x) {
+
+    .mobile-nav {
+        max-width: 100%;
+    }
+}
 
 
 

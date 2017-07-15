@@ -37,19 +37,16 @@ body {
 .show-flex {
     display: flex !important;
 }
-.main-container.blured {
-
-    &:before {
-        content: "";
-        position: absolute;
-        background: rgba(255,255,255,0.7);
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        height: 20000px;
-        z-index: 1;
-    }
+.overlay {
+    position: fixed;
+    display: none;
+    background: rgba(255,255,255,0.7);
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 20000px;
+    z-index: 1;
 }
 
 .main-section {
