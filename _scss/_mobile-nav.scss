@@ -2,8 +2,8 @@
  *      Mobile NAV
  ************************************************/
 .mobile-nav--showed {
-    display: flex;
-    margin-left: 100%;
+    display: flex !important;
+    margin-left: 0 !important;
 }
 
 .mobile-nav {
@@ -17,7 +17,6 @@
     bottom: 0;
     background: rgba(41, 121, 151, 0.9);
     margin-left: 100%;
-    //display: flex;
     flex-direction: column;
     justify-content: space-between;
     z-index: 10;
@@ -44,11 +43,11 @@
     }
 
     &__logo {
-        height: 19px;
+        height: 18px;
         width: 139px;
-        //margin-top: 2px;
+        margin-top: 3px;
         background-image: url(../img/logo.png);
-        background-position: 0 -38px;
+        background-position: 0 -42px;
         background-size: 100%;
     }
 
@@ -98,7 +97,7 @@
     .mobile-nav {
         right: initial;
         padding-right: 50px;
-        max-width: 400px;
+        width: 350px;
     }
 }
 

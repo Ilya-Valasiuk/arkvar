@@ -57,8 +57,8 @@ $( window ).resize(function() {
 
 
 $('.nav-trigger').on('click touch', function(event) {
-    var isVisible = $('.mobile-nav').hasClass('show-flex');
-    $('.mobile-nav').toggleClass('show-flex');
+    var isVisible = $('.mobile-nav').hasClass('mobile-nav--showed');
+    $('.mobile-nav').toggleClass('mobile-nav--showed');
     toggleModalWindowVisibility(this);
 
     if (!isVisible) {
