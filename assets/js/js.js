@@ -71,35 +71,29 @@ $( window ).resize(function() {
 });
 
 var navMobileItems = $('.mobile-nav__list');
+var scrollPosition = 0;
 
 $('.nav-trigger').on('click touch', function(event) {
     event.preventDefault();
     var isVisible = $('.mobile-nav').hasClass('mobile-nav--showed');
+
+    if(!isVisible) {
+        scrollPosition = $('body').scrollTop();
+    }
+
     $('.mobile-nav').toggleClass('mobile-nav--showed');
     toggleModalWindowVisibility(this);
 
     if (!isVisible) {
         $('.mobile-nav').addClass('animated fadeInLeft');
 
-        if (isSmall) {
+        if (document.body.offsetWidth < 1024) {
             navMobileItems.find('.mobile-nav__link--current').removeClass('mobile-nav__link--current');
             var currentItem = navMobileItems.find('[data-block="' + window.location.hash.split('#')[1] + '"]');
             currentItem.addClass('mobile-nav__link--current');
         }
     }
 });
-
-
-$('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
-    event.preventDefault();
-    $('.mobile-nav').removeClass('mobile-nav--showed');
-    toggleModalWindowVisibility(this);
-
-    var blockName = $(this).data('block');
-    var scrollPosition = $('[data-scroll-block="' + blockName + '"]').offset().top;
-    $(window).scrollTop(scrollPosition - 74);
-});
-
 
 $('.contact-form').on('focus', 'input', function(event) {
     $( this ).siblings( ".input-hint" ).addClass('input-hint--small');
@@ -176,14 +170,34 @@ function checkVisible(elm, threshold, mode) {
 var scrollHandler = function () {
     if (bodyEl.hasClass('fixed')) return;
     var el = [].find.call(allBlocks, function(item) {
-        return checkVisible(item, isSmall ? 75 : 0);
+        return checkVisible(item, isSmall ? 80 : 0);
     });
 
-    if (document.body.scrollTop < 100) {
-        window.location.hash = '';
+    if (document.body.scrollTop < (isSmall ? 75 : 441)) {
+        window.location.hash = 'header';
         return;
     }
-    window.location.hash = el ? $(el).attr('data-scroll-block') : '';
+    window.location.hash = el ? $(el).attr('data-scroll-block') : 'header';
 };
 
-$(document).on('scroll', $.throttle(400, true, scrollHandler));
+$(document).on('scroll', $.throttle(200, true, scrollHandler));
+
+$('.site-nav__list, .mobile-nav__list').on('click touch', '.site-nav__link, .mobile-nav__link', function (event) {
+    event.preventDefault();
+    var isMobileNav = $(window).width() < 1024;
+
+    if (isMobileNav) {
+        $('.mobile-nav').removeClass('mobile-nav--showed');
+        toggleModalWindowVisibility(this);
+    }
+    var scrollTo = $(this).data('block');
+    var offset = $('[data-scroll-block="' + scrollTo + '"]').offset().top;
+    
+    if (isMobileNav) {
+        $('body').scrollTop(scrollPosition ? scrollPosition : 0);
+    }
+    
+    $('body').animate({scrollTop: isMobileNav ? offset - 75 : offset}, function () {
+        window.location.hash = scrollTo;
+    });
+});
