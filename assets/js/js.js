@@ -62,7 +62,7 @@ $('.nav-trigger').on('click touch', function(event) {
     toggleModalWindowVisibility(this);
 
     if (!isVisible) {
-        $('.mobile-nav').addClass('animated fadeIn');
+        $('.mobile-nav').addClass('animated fadeInLeft');
     }
 });
 
