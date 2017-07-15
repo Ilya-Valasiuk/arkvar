@@ -54,12 +54,14 @@
         }
 
         &-title {
-            
             text-align: left;
-            font-size: 14px;
-            line-height: 24px;
+            font-size: 10px;
+            line-height: 14px;
+            font-weight: 300;
             @media only screen and (min-width: $medium2x) {
                 flex: 1;
+                font-size: 14px;
+                line-height: 24px;
             }
         }
 
@@ -120,14 +122,15 @@
         }
 
         &-comment {
-            font-size: 18px;
-            line-height: 40px;
+            font-size: 15px;
+            line-height: 24px;
             text-align: center;
             padding: 0 24px;
             font-weight: 300;
              @media only screen and (min-width: $medium2x) {
                 font-size: 30px;
                 padding: 0 15%;
+                line-height: 40px;
             }
         }
 
