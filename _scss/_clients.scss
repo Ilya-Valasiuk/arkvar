@@ -1,21 +1,41 @@
 .clients {
-    padding: 120px 0 85px;
+    padding: 41px 0;
     text-align: center;
     background: #fff;
+
+    @media only screen and (min-width: $medium2x) {
+        padding: 120px 0 85px;
+    }
+
+     @media only screen and (max-width: $medium2x - 1) {
+        &.main-section {
+            width: 100%;
+        }
+    }
 
     &-carousel {
         flex: 1;
         overflow: hidden;
 
         &-wrapper {
-            display: flex;
+            display: none;
             align-items: center;
             padding-top: 50px;
+            @media only screen and (min-width: $medium2x) {
+                display: flex;
+            }
+        }
+        &-mobile {
+            display: block;
+            @media only screen and (min-width: $medium2x) {
+                display: none;
+            }
         }
         &_item {
             font-size: 16px;
             color: #333333;
             transform: translate3d(0, 0, 0);
+            overflow: hidden;
 
             &:focus {
                 outline: none;
@@ -26,26 +46,52 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 33px 0;
+            @media only screen and (min-width: $medium2x) {
+                flex: 1;
+                padding: 0;
+            }
         }
 
         &-title {
-            flex: 1;
+            
             text-align: left;
             font-size: 14px;
             line-height: 24px;
+            @media only screen and (min-width: $medium2x) {
+                flex: 1;
+            }
         }
 
         &-name {
-            font-size: 18px;
+            font-size: 12px;
             line-height: 26px;
             letter-spacing: 5px;
             text-transform: uppercase;
             font-weight: bold;
-            padding: 40px 0;
+            text-align: left;
+            @media only screen and (min-width: $medium2x) {
+                font-size: 18px;
+                padding: 40px 0;
+                text-align: center;
+            }
         }
 
         &-image {
-            margin: 0 60px;
+            margin-right: 16px;
+            width: 95px;
+            height: 95px;
+
+            @media only screen and (min-width: $medium2x) {
+                margin: 0 60px;
+                width: auto;
+                height: auto;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
         }
 
         &-number {
@@ -53,17 +99,36 @@
             font-size: 33px;
             text-align: right;
 
+            .mobile-arrows & {
+                text-align: center;
+            }
+
             &--selected {
                 font-size: 104px;
+                font-weight: 300;
+
+                .mobile-arrows & {
+                    font-size: 38px;
+                }
+            }
+
+            &--current {
+                .mobile-arrows & {
+                    font-size: 12px;
+                }
             }
         }
 
         &-comment {
-            font-size: 30px;
+            font-size: 18px;
             line-height: 40px;
             text-align: center;
-            padding: 0 15%;
+            padding: 0 24px;
             font-weight: 300;
+             @media only screen and (min-width: $medium2x) {
+                font-size: 30px;
+                padding: 0 15%;
+            }
         }
 
         &-prev,
@@ -75,13 +140,18 @@
         }
 
         &-prev {
-            background-image: url(../img/default-copy-3.png);
+            background-image: url(../img/default.svg);
+            transform: rotate(180deg);
         }
 
         &-next {
-            background-image: url(../img/default.png);
+            background-image: url(../img/default.svg);
         }
     }
+}
+
+.clients-mobile-arrows {
+    padding: 24px 24px 0;
 }
 
 .partners {

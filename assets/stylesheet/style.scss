@@ -122,7 +122,14 @@ body {
     }
 }
 
+.mobile-arrows {
+    display: flex;
+    align-items: center;
 
+    @media only screen and (min-width: $medium2x) {
+        display: none;
+    }
+}
 
 
 .twitter-icon {

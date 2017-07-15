@@ -1,8 +1,19 @@
 .blog {
+
+    @media only screen and (max-width: $medium2x - 1) {
+        &.main-section {
+            width: 100%;
+        }
+    }
+
     &-wrapper {
-        padding: 82px 0;
+        padding: 40px 0 10px 0;
         background-color: #e1e8ed;
         text-align: center;
+
+        @media only screen and (min-width: $medium2x) {
+            padding: 82px 0;
+        }
     }
 
     &__headline-wrapper {
@@ -12,6 +23,19 @@
     &-row {
         display: flex;
         justify-content: space-between;
+
+        @media only screen and (max-width: $medium2x) {
+            margin-bottom: 30px;
+        }
+
+        &-wrapper {
+            background-color: #fff;
+            @media only screen and (min-width: $medium2x) {
+                background-color: transparent;
+            }
+        }
+
+        
     }
 
     &-item {
@@ -30,34 +54,58 @@
         background-color: #fff;
         padding: 35px 48px;
         text-align: left;
+
+        @media only screen and (max-width: $medium2x) {
+            padding: 30px 24px;;
+        }
     }
 
     &-type {
-        font-size: 16px;
+        font-size: 10px;
         color: #333;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         text-transform: uppercase;
+        font-weight: 300;
+        @media only screen and (min-width: $medium2x) {
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
     }
 
     &-date {
-        font-size: 16px;
+        font-size: 12px;
         opacity: 0.45;
         color: #333;
-        margin-bottom: 40px;
+        margin-bottom: 32px;
         font-weight: 300;
+        @media only screen and (min-width: $medium2x) {
+            font-size: 16px;
+            margin-bottom: 40px;
+        }
     }
 
     &-title {
         font-size: 24px;
         color: #246983;
         margin-bottom: 15px;
-        font-weight: 700;
+        font-weight: 500;
+        @media only screen and (min-width: $medium2x) {
+            font-weight: 700;
+        }
     }
 
     &-text {
         opacity: 0.7;
-        font-size: 18px;
+        font-size: 15px;
         color: #333333;
         font-weight: 300;
+        @media only screen and (min-width: $medium2x) {
+            font-size: 18px;
+        }
     }
+}
+
+.blog-mobile-arrows {
+    padding: 0 24px 30px;
 }
