@@ -8,6 +8,9 @@ var globalProp = {
     currentPosition: 0
 };
 
+var allBlocks = $('[data-scroll-block]');
+var bodyEl = $('body');
+
 function toggleModalWindowVisibility(el) {
 
     if ( !$(el).hasClass('close-button') ) {
@@ -55,25 +58,33 @@ $( window ).resize(function() {
     //    others
 });
 
+var navMobileItems = $('.mobile-nav__list');
 
 $('.nav-trigger').on('click touch', function(event) {
+    event.preventDefault();
     var isVisible = $('.mobile-nav').hasClass('mobile-nav--showed');
     $('.mobile-nav').toggleClass('mobile-nav--showed');
     toggleModalWindowVisibility(this);
 
     if (!isVisible) {
         $('.mobile-nav').addClass('animated fadeInLeft');
+
+        if (isSmall) {
+            navMobileItems.find('.mobile-nav__link--current').removeClass('mobile-nav__link--current');
+            var currentItem = navMobileItems.find('[data-block="' + window.location.hash.split('#')[1] + '"]');
+            currentItem.find('.mobile-nav__link').addClass('mobile-nav__link--current');
+        }
     }
 });
 
 
 $('.mobile-nav__list').on('click touch', '.mobile-nav__link', function(event) {
     event.preventDefault();
-    $('.mobile-nav').toggleClass('show-flex');
+    $('.mobile-nav').removeClass('show-flex');
     toggleModalWindowVisibility(this);
 
     var blockName = $(this).data('block');
-    var scrollPosition = $('.' + blockName + '-wrapper').offset().top;
+    var scrollPosition = $('[data-scroll-block="' + blockName + '"]').offset().top;
     $(window).scrollTop(scrollPosition - 75);
 });
 
@@ -122,3 +133,20 @@ if (isSmall) {
 }
 
 initClientsSlick();
+
+function checkVisible(elm) {
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
+
+var scrollHandler = function () {
+    if (bodyEl.hasClass('fixed')) return;
+    var el = [].find.call(allBlocks, function(item) {
+        return checkVisible(item);
+    });
+
+    window.location.hash = el ? $(el).attr('data-scroll-block') : '';
+};
+
+$(document).on('scroll', $.throttle(400, true, scrollHandler));
