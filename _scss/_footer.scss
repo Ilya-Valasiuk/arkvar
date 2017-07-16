@@ -42,6 +42,12 @@
         background-color: rgba(255, 255, 255, 0.1);
         background-size: cover;
         background-position: center;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0);
+
+        }
     }
 
 }

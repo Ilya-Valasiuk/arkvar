@@ -5,6 +5,8 @@
     &-wrapper {
         background-image: url(../img/bg-contact.jpg);
         padding: 135px 0 110px;
+        background-position: center;
+        background-size: cover;
     }
 
     &__headline {
@@ -70,6 +72,10 @@
         letter-spacing: 2.3px;
         color: #4592a9;
         text-transform: uppercase;
+        transition: all 0.2s ease;
+        &:hover {
+            background: #e5e5e5;
+        }
     }
 }
 

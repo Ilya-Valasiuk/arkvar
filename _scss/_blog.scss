@@ -86,10 +86,15 @@
     }
 
     &-title {
+        //display: block;
         font-size: 24px;
         color: #246983;
         margin-bottom: 15px;
         font-weight: 500;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
         @media only screen and (min-width: $medium2x) {
             font-weight: 700;
         }
