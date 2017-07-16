@@ -80,7 +80,7 @@ $(function() {
         if (!isVisible) {
             $('.mobile-nav').addClass('animated fadeInLeft');
 
-            if (document.body.offsetWidth < 1024) {
+            if (document.body.offsetWidth < 980) {
                 navMobileItems.find('.mobile-nav__link--current').removeClass('mobile-nav__link--current');
                 var currentItem = navMobileItems.find('[data-block="' + window.location.hash.split('#')[1] + '"]');
                 currentItem.addClass('mobile-nav__link--current');
@@ -92,7 +92,7 @@ $(function() {
 
     $('.site-nav__list .site-nav__link, .mobile-nav__list .mobile-nav__link, .mobile-nav__logo, .site-nav__logo').on('click touch', function (event) {
         event.preventDefault();
-        var isMobileNav = $(window).width() < 1024;
+        var isMobileNav = $(window).width() < 980;
 
         if (isMobileNav) {
             if ($('.mobile-nav').hasClass('mobile-nav--showed')) {
