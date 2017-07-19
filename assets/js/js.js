@@ -200,4 +200,24 @@ $(function() {
     };
 
     $(document).on('scroll', $.throttle(200, true, scrollHandler));
+
+    $('#contact-form').on('submit', function(event) {
+        event.preventDefault();
+        var $form = $(this);
+        var thankYouBlock = $('.contact-thank-you');
+        var data = $form.serializeArray().reduce(function(result, item) {
+            result[item.name] = item.value;
+            return result;
+        }, {});
+
+        $form.hide();
+        thankYouBlock.fadeIn('slow');
+
+        $.ajax({
+            url: "https://formspree.io/info@arkvar.com", 
+            method: "POST",
+            data: data,
+            dataType: "json"
+        });
+    });
 });

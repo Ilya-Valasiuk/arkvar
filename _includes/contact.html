@@ -3,25 +3,31 @@
     <section class="contact main-section">
         <h2 class="contact__headline headline headline-marker">Contact</h2>
 
-        <form class="contact-form" action="https://formspree.io/ilya.valasiuk@gmail.com" method="POST">
-            <div class="contact-input">
-                <input type="text" name="name" autocomplete="off">
-                <span class="input-hint">name</span>
-            </div>
-            <div class="contact-input">
-                <input type="text" name="company" autocomplete="off">
-                <span class="input-hint">COMPANY</span>
+        <div class="contact-form-wrapper">
+            <form id="contact-form" class="contact-form">
+                <div class="contact-input">
+                    <input type="text" name="name" autocomplete="off" required>
+                    <span class="input-hint">name</span>
+                </div>
+                <div class="contact-input">
+                    <input type="text" name="company" autocomplete="off" required>
+                    <span class="input-hint">COMPANY</span>
 
+                </div>
+                <div class="contact-input">
+                    <input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" autocomplete="off">
+                    <span class="input-hint">E-MAIL</span>
+                </div>
+                <div class="contact-input">
+                    <input type="text" name="Describe your business briefly" autocomplete="off" required>
+                    <span class="input-hint">Describe your business briefly</span>
+                </div>
+                <button type="submit" class="contact-submit">Get in touch</button>
+            </form>
+            <div class="contact-thank-you">
+                <p>Thank you for your request.</p>
+                <p>We will contact you shortly.</p>
             </div>
-            <div class="contact-input">
-                <input type="email" name="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" autocomplete="off">
-                <span class="input-hint">E-MAIL</span>
-            </div>
-            <div class="contact-input">
-                <input type="text" name="Describe your business briefly" autocomplete="off">
-                <span class="input-hint">Describe your business briefly</span>
-            </div>
-            <button type="submit" class="contact-submit">Get in touch</button>
-        </form>
+        </div>
     </section>
 </div>
