@@ -204,15 +204,17 @@ $(function() {
     $('#contact-form').on('submit', function(event) {
         event.preventDefault();
         var $form = $(this);
-        var thankYouBlock = $('.contact-thank-you');
+        var thankYouBlock = $('.contact-thank-you-wrapper');
         var data = $form.serializeArray().reduce(function(result, item) {
             result[item.name] = item.value;
             return result;
         }, {});
 
-        $form.hide();
-        thankYouBlock.fadeIn('slow');
-
+        $form.css('visibility', 'hidden');
+        setTimeout(function() {
+            thankYouBlock.fadeIn('slow');
+        }, 50);
+        
         $.ajax({
             url: "https://formspree.io/info@arkvar.com", 
             method: "POST",
